@@ -21,8 +21,9 @@ class _SplashFuturePageState extends State<SplashFuturePage> {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
+      showLoader: true,
       logo: Image.asset("assets/images/logo.png"),
-      logoSize: MediaQuery.of(context).size.width * 0.1,
+      logoSize: MediaQuery.of(context).size.width * 0.2,
       title: Text(
         "Book Store",
         style: TextStyle(

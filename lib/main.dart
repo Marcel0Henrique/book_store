@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.yellow,
+        primaryColor: Colors.yellow,
+        scaffoldBackgroundColor: Colors.yellow,
+      ),
       initialRoute: "/splash",
       routes: {
         "/splash": (context) => SplashFuturePage(),
