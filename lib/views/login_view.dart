@@ -1,4 +1,3 @@
-import 'package:book_store/store/login_store.dart';
 import 'package:book_store/widgets/custom_elevatedbuttom.dart';
 import 'package:book_store/widgets/custom_textformfield.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  LoginController _controller = LoginController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,15 +49,13 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.05),
-                      CustomTextFormField(
-                        controller: _controller.email_Controller,
+                      const CustomTextFormField(
                         prefixIcon: Icon(Icons.person),
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04),
-                      CustomTextFormField(
+                      const CustomTextFormField(
                         obscureText: false,
-                        controller: _controller.pass_Controller,
                         prefixIcon: Icon(Icons.lock),
                         suffixIcon: Icon(Icons.visibility),
                       ),
