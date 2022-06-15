@@ -1,3 +1,4 @@
+import 'package:book_store/store/login_store.dart';
 import 'package:book_store/widgets/custom_elevatedbuttom.dart';
 import 'package:book_store/widgets/custom_textformfield.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  LoginController _controller = LoginController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,22 +20,27 @@ class _LoginViewState extends State<LoginView> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.all(32),
+            padding: EdgeInsets.only(
+              bottom: 0,
+              left: MediaQuery.of(context).size.width * 0.07,
+              right: MediaQuery.of(context).size.width * 0.07,
+            ),
             child: Container(
               alignment: Alignment.center,
               child: Card(
+                elevation: 16,
                 color: Color(0xff1c1c1c),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 child: Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.width * 0.038),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset(
-                        "assets/images/logo.png",
-                        scale: MediaQuery.of(context).size.width * 0.05,
-                      ),
+                      FaIcon(FontAwesomeIcons.book,
+                          color: Colors.orange,
+                          size: MediaQuery.of(context).size.width * 0.1),
                       Text(
                         "Book Store",
                         style: TextStyle(
@@ -42,12 +49,17 @@ class _LoginViewState extends State<LoginView> {
                           color: Colors.orange,
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      const CustomTextFormField(
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05),
+                      CustomTextFormField(
+                        controller: _controller.email_Controller,
                         prefixIcon: Icon(Icons.person),
                       ),
-                      const SizedBox(height: 20),
-                      const CustomTextFormField(
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.04),
+                      CustomTextFormField(
+                        obscureText: false,
+                        controller: _controller.pass_Controller,
                         prefixIcon: Icon(Icons.lock),
                         suffixIcon: Icon(Icons.visibility),
                       ),
@@ -70,14 +82,18 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
           ),
-          Text(
-            "Ou",
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.05,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.of(context).size.height * 0.03,
+            ),
+            child: Text(
+              "Ou",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.width * 0.05,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          const SizedBox(height: 20),
           CustomElevatedButtom(
             inverseColor: true,
             onPressed: () {},
