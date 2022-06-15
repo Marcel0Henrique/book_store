@@ -1,4 +1,4 @@
-#📚Book Store
+# 📚Book Store
 
 #### 1. **Sobre**
 	- Foi idealizado como um projeto de estudo para portfolio utilizando o framework Flutter para desenvolvimento mobile, 
