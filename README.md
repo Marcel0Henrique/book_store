@@ -1,16 +1,17 @@
-# book_store
+# 📚Book Store
 
-A new Flutter project.
+## ⚠️Em Construção
 
-## Getting Started
+#### 1. **Sobre**
+	- Foi idealizado como um projeto de estudo para portfolio utilizando o framework Flutter para desenvolvimento mobile, 
+	por isso possiveis erros podem aparecer.
+#### 2. **O que é ?**
+	- É uma loja de livros similar a play store em funcionamento, permitindo baixar os livros para leitura posterior e utilizando o leito integrado ao proprio aplicativo.
+#### 3. **O que faz ?**
+	- Ainda não está funcional.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### 4. **O que ira fazer ?**
+	 - Login e cadastro.
+	 - Pesquisa de livros.
+	 - baixar livros para leitura offline.
+	 - leitura de livros utilizando o proprio aplicativo.
