@@ -58,12 +58,14 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04),
-                      Consumer(
-                        builder: (context, _controller, child) =>
-                            CustomTextFormField(
-                          obscureText: true,
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: Icon(Icons.visibility),
+                      Consumer<LoginController>(
+                        builder: (context, controller, child) => TextField(
+                          obscureText: controller.obscurePassword,
+                          decoration: InputDecoration(
+                            suffix: IconButton(
+                                onPressed: controller.changeVisiblePassword,
+                                icon: controller.visibleIcon),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),

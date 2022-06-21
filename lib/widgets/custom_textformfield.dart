@@ -31,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
           obscureText: obscureText,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
+            suffix: suffixIcon,
             border: InputBorder.none,
           ),
         ),
