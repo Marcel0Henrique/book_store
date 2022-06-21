@@ -1,7 +1,9 @@
+import 'package:book_store/controllers/login_controller.dart';
 import 'package:book_store/widgets/custom_elevatedbuttom.dart';
 import 'package:book_store/widgets/custom_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);
@@ -11,6 +13,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  LoginController _controller = LoginController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,10 +58,13 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04),
-                      const CustomTextFormField(
-                        obscureText: false,
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: Icon(Icons.visibility),
+                      Consumer(
+                        builder: (context, _controller, child) =>
+                            CustomTextFormField(
+                          obscureText: true,
+                          prefixIcon: Icon(Icons.lock),
+                          suffixIcon: Icon(Icons.visibility),
+                        ),
                       ),
                       const SizedBox(height: 30),
                       CustomElevatedButtom(

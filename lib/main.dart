@@ -1,9 +1,16 @@
+import 'package:book_store/controllers/login_controller.dart';
 import 'package:book_store/views/login_view.dart';
 import 'package:book_store/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: ((_) => LoginController()),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
