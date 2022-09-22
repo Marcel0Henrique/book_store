@@ -8,7 +8,7 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: ((_) => LoginController()),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }

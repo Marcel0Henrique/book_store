@@ -13,7 +13,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  LoginController _controller = LoginController();
+  Icon testeIcon = Icon(Icons.visibility);
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +59,13 @@ class _LoginViewState extends State<LoginView> {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04),
                       Consumer<LoginController>(
-                        builder: (context, controller, child) => TextField(
-                          obscureText: controller.obscurePassword,
-                          decoration: InputDecoration(
-                            suffix: IconButton(
-                                onPressed: controller.changeVisiblePassword,
-                                icon: controller.visibleIcon),
+                        builder: (context, _controller, child) =>
+                            CustomTextFormField(
+                          obscureText: true,
+                          prefixIcon: Icon(Icons.lock),
+                          suffixIcon: IconButton(
+                            icon: testeIcon,
+                            onPressed: _controller.changeVisiblePassword,
                           ),
                         ),
                       ),
